@@ -12,7 +12,7 @@ jobs:
       - uses: microsoft/powerplatform-actions/pack-solution@v0
         with:
           solution-file: out/pack-solution-MT‎.zip
-          solution-folder: solutions/MT_ALMLabs/Other
+          solution-folder: solutions/MT_ALMLabs
           solution-type: unmanaged
       - uses: actions/upload-artifact@v4
         with:
