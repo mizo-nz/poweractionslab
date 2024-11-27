@@ -1,0 +1,23 @@
+name: Deploy lab solution
+on: 
+  workflow_run: 
+    workflows: ["Pack"] 
+    branches: [main] 
+    types: 
+      - completed
+  workflow_dispatch:
+jobs: 
+  deploy: 
+    runs-on: windows-latest 
+    environment: production 
+    steps: 
+      - uses: dawidd6/action-download-artifact@v4
+        with: 
+          workflow: pack-solution.yml 
+          name: packed-solution 
+      - uses: microsoft/powerplatform-actions/import-solution@v0 
+        with: 
+          environment-url: https://ard26dev.crm6.dynamics.com/
+          user-name: ${{ secrets.USERNAME }} 
+          password-secret: ${{ secrets.PASSWORD }} 
+          solution-file: pack-solution-MT.zip
