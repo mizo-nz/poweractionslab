@@ -1,5 +1,4 @@
-name: Pack
-
+name: pack Lab solution
 on:
   push:
     paths:
