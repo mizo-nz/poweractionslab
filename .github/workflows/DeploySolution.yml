@@ -11,7 +11,7 @@ jobs:
     runs-on: windows-latest 
     environment: production 
     steps: 
-      - uses: dawidd6/action-download-artifact@v4
+      - uses: dawidd6/action-download-artifact@v2
         with: 
           workflow: pack-solution.yml 
           name: packed-solution 
@@ -20,4 +20,4 @@ jobs:
           environment-url: https://ard26dev.crm6.dynamics.com/
           user-name: ${{ secrets.USERNAME }} 
           password-secret: ${{ secrets.PASSWORD }} 
-          solution-file: out/pack-solution-MT.zip
+          solution-file: pack-solution-MT.zip
