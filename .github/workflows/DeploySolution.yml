@@ -20,4 +20,4 @@ jobs:
           environment-url: https://ard26dev.crm6.dynamics.com/
           user-name: ${{ secrets.USERNAME }} 
           password-secret: ${{ secrets.PASSWORD }} 
-          solution-file: pack-solution-MT.zip
+          solution-file: solutions/MT_ALMLabs/pack-solution-MT.zip
