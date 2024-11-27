@@ -1,7 +1,7 @@
 name: Deploy lab solution
 on: 
   workflow_run: 
-    workflows: ["Pack"] 
+    workflows: ["Pack MTSolution"] 
     branches: [main] 
     types: 
       - completed
