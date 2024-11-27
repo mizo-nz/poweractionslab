@@ -1,20 +1,20 @@
-name: pack Lab solution
+name: Pack
 on:
-  push:
-    paths:
-      - contents/** 
-  workflow_dispatch:
+  push:
+    paths:
+      - solutions/MT_ALMLabs/**
+  workflow_dispatch:
 jobs:
-  build: 
+  build:
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: microsoft/powerplatform-actions/pack-solution@v0 
-        with: 
-          solution-file: out/pack-solution-MT.zip 
-          solution-folder: contents 
-          solution-type: Both
-    - uses: actions/upload-artifact@v4
-        with: 
-          name: packed-solution 
+      - uses: actions/checkout@v4
+      - uses: microsoft/powerplatform-actions/pack-solution@v0
+        with:
+          solution-file: out/pack-solution-MT‎.zip
+          solution-folder: solutions/MT_ALMLabs/Other
+          solution-type: unmanaged
+      - uses: actions/upload-artifact@v4
+        with:
+          name: packed-solution
           path: out/
